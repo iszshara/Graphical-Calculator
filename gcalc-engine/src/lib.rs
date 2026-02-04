@@ -1,0 +1,9 @@
+pub mod ast;
+pub mod errors;
+pub mod eval;
+pub mod linear_algebra;
+pub mod numeric;
+pub mod parser;
+pub mod statistics;
+pub mod symbolic;
+pub mod tokenizer;
