@@ -5,12 +5,14 @@ use std::iter::Peekable;
 pub enum Token {
     Number(i32),
     Float(f64),
+    _Variable(char),
     Plus,
     Minus,
     Multiply,
     Divide,
     OpenParen,
     ClosedParen,
+    Exponent,
 
 }
 
@@ -43,6 +45,7 @@ impl<'a> Lexer<'a> {
             '/' => Some(Token::Divide),
             '(' => Some(Token::OpenParen),
             ')' => Some(Token::ClosedParen),
+            '^' => Some(Token::Exponent),
             '0'..='9' => 
             {
                 let mut int_value = ch.to_digit(10)? as i32;   // radix defines the number system
